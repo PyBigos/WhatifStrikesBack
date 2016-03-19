@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+	<link rel="stylesheet" href="boilerplate.css">
+	<link rel="stylesheet" href="page 1.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
+    <link rel="stylesheet" href="https://js.arcgis.com/3.16/esri/css/esri.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://js.arcgis.com/3.16/"></script>
+    <script src="js/app.js"></script>
+    
+    </head>
+    <body>
+
+    <div id="primaryContainer" class="primaryContainer clearfix">
+        <div id="heatRen" class="clearfix">
+            <img src="heat.png">
+        </div>
+        <div id="sizeRen" class="clearfix">
+            End Speed
+        </div>
+        <div id="uniqRen" class="clearfix">
+        </div>
+        <div id="map" class="clearfix">
+        </div>
+        <div id="pitchFilt" class="clearfix">
+        </div>
+        <div id="speedFilt" class="clearfix">
+        </div>
+        <div id="statsRes" class="clearfix">
+            <p id="lblBatter" class="badge">
+            Batter&#x3a;
+            </p>
+            <p id="lblPitcher" class="badge">
+            Pitcher&#x3a;
+            </p>
+            <p id="lblFilter_">
+            Filter&#x3a;<br />
+            </p>
+            <span id=avgDist class="badge"> ....</span>
+        </div>
+        <div id="plateFilt" class="clearfix">
+        </div>
+        <div id="threeD" class="clearfix">
+            
+            
+            
+        </div>
+        <input id="batterAuto" class="clearfix" name="batters" list="batterlst"/>
+        
+        <input id="batterAuto1" class="clearfix"name="pitchers" list="pitcherlst"/>
+        
+    </div>
+    <datalist id="batterlst">
+        <datalist id="pitcherlst">
+    </body>
+</html>

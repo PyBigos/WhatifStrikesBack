@@ -1,0 +1,178 @@
+.primaryContainer {
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 100%;
+    width: 100%;
+}
+
+#heatRen {
+    float: left;
+    height: 91px;
+    margin-left: 3.979785%;
+    margin-top: 67px;
+    clear: none;
+    width: 6.253948%;
+    border: 1px solid rgb(84, 78, 78);
+}
+
+#sizeRen {
+    float: left;
+    height: 91px;
+    margin-left: 3.99624%;
+    margin-top: 90.5px;
+    clear: both;
+    width: 6.253948%;
+    display: block;
+    margin-right: 0%;
+     border: 1px solid rgb(84, 78, 78);
+}
+
+#uniqRen {
+    float: left;
+    height: 91px;
+    margin-left: 3.99624%;
+    margin-top: 102.5px;
+    clear: both;
+    width: 6.253948%;
+    display: block;
+    margin-right: 0%;
+     border: 1px solid rgb(84, 78, 78);
+}
+
+#map {
+    float: left;
+    height: 542px;
+    margin-left: 4.416957%;
+    margin-top: -272.5px;
+    clear: none;
+    width: 51.199101%;
+    margin-right: 0%;
+     border: 1px solid rgb(84, 78, 78);
+}
+
+#pitchFilt {
+    float: left;
+    height: 91px;
+    margin-left: 2.297322%;
+    margin-top: -272.5px;
+    clear: none;
+    width: 6.253948%;
+    display: block;
+    margin-right: 0%;
+     border: 1px solid rgb(84, 78, 78);
+}
+
+#speedFilt {
+    float: left;
+    height: 91px;
+    margin-left: 2.240004%;
+    margin-top: -91px;
+    clear: none;
+    width: 6.253948%;
+    display: block;
+    margin-right: 0%;
+     border: 1px solid rgb(84, 78, 78);
+}
+
+#plateFilt {
+    float: left;
+    height: 91px;
+    margin-left: 2.297322%;
+    margin-top: 102.5px;
+    clear: none;
+    width: 6.253948%;
+    display: block;
+    margin-right: 0%;
+     border: 1px solid rgb(84, 78, 78);
+}
+
+#batterAuto {
+    float: left;
+    height: 28px;
+    margin-left: 17.064839%;
+    margin-top: 14px;
+    clear: both;
+    width: 15.866884%;
+     border: 1px solid rgb(84, 78, 78);
+}
+
+#batterAuto1 {
+    float: left;
+    height: 28px;
+    margin-left: 9.753302%;
+    margin-top: 14px;
+    clear: none;
+    width: 15.866884%;
+    display: block;
+    margin-right: 0%;
+     border: 1px solid rgb(84, 78, 78);
+}
+
+#statsRes {
+    float: left;
+    height: 272.5px;
+    margin-left: 10.932915%;
+    margin-top: -272.5px;
+    clear: none;
+    width: 21.790169%;
+    margin-right: 0%;
+     border: 1px solid rgb(84, 78, 78);
+}
+
+#threeD {
+    float: left;
+    height: 272.5px;
+    margin-left: 2.382153%;
+    margin-top: 24px;
+    clear: none;
+    width: 21.790169%;
+    margin-right: 0%;
+    display: block;
+     border: 1px solid rgb(84, 78, 78);
+}
+
+#lblBatter {
+    float: left;
+    font-size: 1em;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: 7.149621%;
+    margin-top: 20px;
+    clear: none;
+    min-height: 0px;
+}
+
+#lblPitcher {
+    float: left;
+    font-size: 1em;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: 7.149621%;
+    margin-top: 21px;
+    clear: both;
+    min-height: 0px;
+    display: block;
+    margin-right: 0%;
+}
+
+#lblFilter_ {
+    float: left;
+    font-size: 1em;
+    width: 21.001684%;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    margin-left: 7.149621%;
+    margin-top: 18px;
+    clear: both;
+    min-height: 22px;
+}
+
