@@ -7,6 +7,10 @@
 }
 
 #heatRen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     float: left;
     height: 91px;
     margin-left: 3.979785%;
@@ -16,7 +20,11 @@
     border: 1px solid rgb(84, 78, 78);
 }
 
+
+img{ max-width: 100%; }
 #sizeRen {
+    
+    display: flex;
     float: left;
     height: 91px;
     margin-left: 3.99624%;
@@ -27,6 +35,7 @@
     margin-right: 0%;
      border: 1px solid rgb(84, 78, 78);
 }
+
 
 #uniqRen {
     float: left;

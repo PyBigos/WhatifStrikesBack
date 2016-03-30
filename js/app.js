@@ -9,15 +9,17 @@ require(["esri/map",
 "esri/Color",
 	  "esri/tasks/QueryTask",
       "esri/graphic",
+      "esri/graphicsUtils",
       "esri/geometry/geometryEngine",
       "esri/geometry/Polyline",
       "esri/geometry/mathUtils",
       "esri/SpatialReference",
 	  'dojo/dom',
+      'dojo/string',
 	  "dojo/dom-construct",
 	  'dojo/on',
  "dojo/domReady!"], function(Map,extent,featLayer,query,heatR,ClassBreaksRenderer,
- SimpleMarkerSymbol,SimpleLineSymbol,Color,qTask,Graphic,ge,polyline,mathUtil,spatRef,dom,domc,on) {
+ SimpleMarkerSymbol,SimpleLineSymbol,Color,qTask,Graphic,gutils,ge,polyline,mathUtil,spatRef,dom,dString,domc,on) {
      
         var ext = new extent({"xmin": -13042004.933154235, "ymin": 3856468.7209161334, "xmax": -13041714.711312553, "ymax": 3856629.9552726233,"spatialReference":{"wkid":3857}});
         fUrl = "http://services.arcgis.com/XWaQZrOGjgrsZ6Cu/arcgis/rest/services/Padres_events/FeatureServer/0"
@@ -117,9 +119,25 @@ require(["esri/map",
 		var l = dom.byId("pitcherlst");
        var ll = dom.byId("batterAuto1");
 	   on(ll,'change',function(v){
+        
+        if (hits.getDefinitionExpression()){
+            console.log(hits.getDefinitionExpression());
+        }   
+        
 		console.log(v.srcElement.value);
 		console.log(names[v.srcElement.value]);
-		var PitcherFilt = "pitcher = " + names[v.srcElement.value];
+        
+        if (hits.getDefinitionExpression()){
+            var currentExp = hits.getDefinitionExpression();
+            var Pitcherexp = "pitcher = " + names[v.srcElement.value];
+            var PitcherFilt = dString.substitute("${currentexp} AND ${pitcherexp}",{currentexp:currentExp,pitcherexp:Pitcherexp});//currentExp.concat(" AND ")
+            
+        } else{
+            var PitcherFilt = "pitcher = " + names[v.srcElement.value];
+        }
+        
+        
+		
 		//console.log(batterFilt);
         var pitcherLbl = dom.byId("lblPitcher");
         pitcherLbl.innerHTML = v.srcElement.value;
@@ -191,9 +209,21 @@ require(["esri/map",
             
             var davgArry = []
             
-            hits.queryFeatures(qParams,function(p){
+             gs = gutils.getGeometries(hits.graphics);
+           b = ge.intersect(gs,buff);
+            b.forEach(function(d){if(d){
+              var pLine = new  polyline(spf);
+                    pLine.addPath([bCent,d]);
+                    
+                    var ln = new Graphic(pLine,line);
+                    map.graphics.add(ln);
+                    
+                   var lng = mathUtil.getLength(bCent,d);
+                   davgArry.push(lng);
+            }})
+            //hits.queryFeatures(qParams,function(p){
                 
-                p.features.forEach(function(feat){
+                /*p.features.forEach(function(feat){
                     var pLine = new  polyline(spf);
                     pLine.addPath([evt.mapPoint,feat.geometry]);
                     
@@ -203,8 +233,8 @@ require(["esri/map",
                    var lng = mathUtil.getLength(evt.mapPoint,feat.geometry);
                    davgArry.push(lng);
                    
-                })
-                
+               // })
+                */
                 if (davgArry.length > 4){
                 var total = davgArry.reduce(function(a,b){
                 return a+b;
@@ -218,11 +248,44 @@ require(["esri/map",
             
             
             
-        })
+        //})
        
        
        
-       
+       //test client intersect
+       on(dom.byId("threeD"),"click",function(e){
+           var davgArry = []
+           cent = map.extent.getCenter();
+           cBuff = ge.buffer(cent,50,'feet');
+           gs = gutils.getGeometries(hits.graphics);
+           b = ge.intersect(gs,cBuff);
+           console.log(b);
+           intRes =[]
+           b.forEach(function(d){if(d){
+              var pLine = new  polyline(spf);
+                    pLine.addPath([cent,d]);
+                    
+                    var ln = new Graphic(pLine,line);
+                    map.graphics.add(ln);
+                    
+                   var lng = mathUtil.getLength(cent,d);
+                   davgArry.push(lng);
+            }})
+            
+            
+            
+            if (davgArry.length > 4){
+                var total = davgArry.reduce(function(a,b){
+                return a+b;
+                    })
+                    var dAvg = total/davgArry.length;
+                    var avgEle = dom.byId("avgDist");
+                    avgEle.innerHTML = dAvg;
+                    }
+            
+            
+            
+       })
        
        
        
