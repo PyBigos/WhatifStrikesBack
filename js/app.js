@@ -23,7 +23,7 @@ require(["esri/map",
      
         var ext = new extent({"xmin": -13042004.933154235, "ymin": 3856468.7209161334, "xmax": -13041714.711312553, "ymax": 3856629.9552726233,"spatialReference":{"wkid":3857}});
         fUrl = "http://services.arcgis.com/XWaQZrOGjgrsZ6Cu/arcgis/rest/services/Padres_events/FeatureServer/0"
-        var hits = new featLayer("http://services.arcgis.com/XWaQZrOGjgrsZ6Cu/arcgis/rest/services/Padres_events/FeatureServer/0",{
+        var hits = new featLayer("https://services7.arcgis.com/Gk8wYdLBgQPxqVZU/arcgis/rest/services/Padres/FeatureServer/0",{
             mode:featLayer.ON_DEMAND
         });
      
