@@ -49,7 +49,7 @@ require(["esri/map",
 		names = {};//[];
 		var counts = {};
 		
-		var queryBatters = new qTask("http://services.arcgis.com/XWaQZrOGjgrsZ6Cu/arcgis/rest/services/Padres_events/FeatureServer/2");
+		var queryBatters = new qTask("https://services.arcgis.com/XWaQZrOGjgrsZ6Cu/arcgis/rest/services/Padres_events/FeatureServer/2");
 		queryBatters.execute(question,function(bRes){
 			bRes.features.forEach(function(res){
 				var fullName = res.attributes["first_name"] + " " + res.attributes["last_name"]
@@ -94,7 +94,7 @@ require(["esri/map",
 		names = {};//[];
 		var counts = {};
 		
-		var queryPitchers = new qTask("http://services.arcgis.com/XWaQZrOGjgrsZ6Cu/arcgis/rest/services/Padres_events/FeatureServer/3");
+		var queryPitchers = new qTask("https://services.arcgis.com/XWaQZrOGjgrsZ6Cu/arcgis/rest/services/Padres_events/FeatureServer/3");
 		queryPitchers.execute(question,function(bRes){
 			bRes.features.forEach(function(res){
 				var fullName = res.attributes["first_name"] + " " + res.attributes["last_name"]
